@@ -9,7 +9,7 @@ const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
   const user = sequelize.define('users', {
-    email: {
+    username: {
       type: Sequelize.STRING,
       allowNull: false,
       unique: true
