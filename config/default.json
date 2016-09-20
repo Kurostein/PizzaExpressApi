@@ -1,7 +1,7 @@
 {
   "host": "localhost",
-  "port": 3030,
-  "mysql": "mysql://root:@localhost:3306/pizzaExpressApi",
+  "port": 4040,
+  "mysql": "mysql://root:@localhost:3306/PizzaExpress",
   "public": "../public/",
   "auth": {
     "idField": "id",
