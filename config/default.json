@@ -1,0 +1,13 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "mysql": "mysql://root:@localhost:3306/pizzaExpressApi",
+  "public": "../public/",
+  "auth": {
+    "idField": "id",
+    "token": {
+      "secret": "CWGGgs7gxtY9SvYQMNti765ZzbFfvew7AOTr+HcUV0wdU4vmNgYznX1KTWF1+yR+ipInxObGxaud/l9bbdf5jg=="
+    },
+    "local": {}
+  }
+}
