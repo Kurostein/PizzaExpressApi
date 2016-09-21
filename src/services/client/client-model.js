@@ -1,16 +1,21 @@
 'use strict';
 
 // client-model.js - A sequelize model
-// 
+//
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 
 const Sequelize = require('sequelize');
-const user = require('./user-model');
-const address = require('./address-model');
+const address = require('../address/address-model');
 
 module.exports = function(sequelize) {
   const client = sequelize.define('clients', {
+    id: {
+      type: Sequelize.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
     name: {
       type: Sequelize.STRING,
       allowNull: false
@@ -32,8 +37,8 @@ module.exports = function(sequelize) {
     freezeTableName: true
   });
 
-  client.hasOne(user);
-  client.belongsTo(address);
+  var addressObj = address(sequelize);
+  client.belongsTo(addressObj, { foreignKey: 'addressId', targetKey: 'id'});
 
   client.sync();
 
