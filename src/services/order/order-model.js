@@ -1,29 +1,27 @@
 'use strict';
 
-// address-model.js - A sequelize model
-//
+// order-model.js - A sequelize model
+// 
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 
 const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
-  const address = sequelize.define('addresses', {
-    id: {
-      type: Sequelize.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false
-    },
-    street: {
+  const order = sequelize.define('orders', {
+    name: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    number: {
+    cpf: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    cep: {
+    phone: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    address: {
       type: Sequelize.STRING,
       allowNull: false
     },
@@ -31,11 +29,15 @@ module.exports = function(sequelize) {
       type: Sequelize.STRING,
       allowNull: false
     },
-    city: {
+    complement: {
       type: Sequelize.STRING,
       allowNull: false
     },
-    state: {
+    product: {
+      type: Sequelize.STRING,
+      allowNull: false
+    },
+    price: {
       type: Sequelize.STRING,
       allowNull: false
     }
@@ -43,7 +45,7 @@ module.exports = function(sequelize) {
     freezeTableName: true
   });
 
-  address.sync();
+  order.sync();
 
-  return address;
+  return order;
 };
