@@ -9,12 +9,6 @@ const Sequelize = require('sequelize');
 
 module.exports = function(sequelize) {
   const user = sequelize.define('users', {
-    // id: {
-    //   type: Sequelize.INTEGER,
-    //   autoIncrement: true,
-    //   primaryKey: true,
-    //   allowNull: false
-    // },
     username: {
       type: Sequelize.STRING,
       allowNull: false,
@@ -40,7 +34,7 @@ module.exports = function(sequelize) {
   }, {
     freezeTableName: true
   });
-  
+
   user.sync();
 
   return user;

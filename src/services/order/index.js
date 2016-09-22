@@ -8,11 +8,11 @@ module.exports = function(){
   const app = this;
 
   const options = {
-    Model: order(app.get('sequelize')),
-    paginate: {
-      default: 5,
-      max: 25
-    }
+    Model: order(app.get('sequelize'))
+    // paginate: {
+    //   default: 5,
+    //   max: 25
+    // }
   };
 
   // Initialize our service with any options it requires
